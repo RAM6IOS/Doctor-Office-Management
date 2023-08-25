@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'DoctorDashboard.dart';
+import 'DoctorSignUpScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -122,7 +124,7 @@ class _DoctorAuthenticationScreenState extends State<DoctorAuthenticationScreen>
                 // Implement your login logic here
                 // For example: verify email and password
                 // Then navigate to the doctor's dashboard
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDashboard()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDashboard() ));
               },
               child: Text('Log In'),
             ),
@@ -183,7 +185,7 @@ class DoctorSignUpScreen extends StatelessWidget {
                 // Implement your sign-up logic here
                 // For example: create a new doctor account
                 // Then navigate to the doctor's dashboard
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDashboard()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorSignUpScreen()));
               },
               child: Text('Sign Up'),
             ),
@@ -194,14 +196,3 @@ class DoctorSignUpScreen extends StatelessWidget {
   }
 }
 
-class DoctorDashboard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Doctor Dashboard')),
-      body: Center(
-        child: Text('Welcome to the Doctor Dashboard'),
-      ),
-    );
-  }
-}
