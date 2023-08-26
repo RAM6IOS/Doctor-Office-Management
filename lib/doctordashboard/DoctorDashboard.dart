@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'PatientListScreen.dart';
+import '../PatientListScreen.dart';
+import '../medicalhistories/MedicalHistoriesScreen.dart';
 class DoctorDashboard extends StatelessWidget {
   final String doctorName = "Rami";
 
@@ -29,14 +30,16 @@ class DoctorDashboard extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               // Implement other navigation options
+              Navigator.push(context, MaterialPageRoute(builder: (context) => MedicalHistoriesScreen()));
             },
-            child: Text('Other Sections'),
+            child: Text('MedicalHistories'),
           ),
           SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
               // Log out and return to authentication screen
-              Navigator.popUntil(context, ModalRoute.withName('/'));
+             // Navigator.popUntil(context, ModalRoute.withName('/'));
+               
             },
             child: Text('Log Out'),
           ),

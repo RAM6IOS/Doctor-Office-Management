@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'DoctorDashboard.dart';
+import '../doctordashboard/DoctorDashboard.dart';
 import 'LoginScreen.dart';
 
 class DoctorSignUpScreen extends StatelessWidget {

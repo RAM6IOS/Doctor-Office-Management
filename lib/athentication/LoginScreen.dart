@@ -1,86 +1,11 @@
 import 'package:flutter/material.dart';
-import 'DoctorDashboard.dart';
+import '../doctordashboard/DoctorDashboard.dart';
 import 'DoctorSignUpScreen.dart';
 
-class LoginScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Doctor Login')),
-      body: LoginForm(),
-    );
-  }
-}
 
-class LoginForm extends StatefulWidget {
-  @override
-  _LoginFormState createState() => _LoginFormState();
-}
 
-class _LoginFormState extends State<LoginForm> {
-  final _formKey = GlobalKey<FormState>();
-  String _email = '';
-  String _password = '';
 
-  void _login() {
-    if (_formKey.currentState?.validate() == true) {
-      // Perform authentication here
-      // You can use Firebase Authentication or any other method
 
-      // For demonstration purposes, let's assume successful login
-      Navigator.pushReplacementNamed(context, '/dashboard'); // Replace with your dashboard route
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextFormField(
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(labelText: 'Email'),
-              validator: (value) {
-                if (value?.isEmpty == true) {
-                  return 'Please enter your email';
-                }
-                return null;
-              },
-              onChanged: (value) {
-                setState(() {
-                  _email = value;
-                });
-              },
-            ),
-            TextFormField(
-              obscureText: true,
-              decoration: InputDecoration(labelText: 'Password'),
-              validator: (value) {
-                if (value?.isEmpty == true) {
-                  return 'Please enter your password';
-                }
-                return null;
-              },
-              onChanged: (value) {
-                setState(() {
-                  _password = value;
-                });
-              },
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _login,
-              child: Text('Login'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 
 

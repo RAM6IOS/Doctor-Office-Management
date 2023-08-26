@@ -34,7 +34,7 @@ class AuthService {
 
 
 }
-
+/*
 class AuthProvider extends ChangeNotifier {
   final AuthService _authService = AuthService();
   Doctor? _loggedInDoctor;
@@ -85,7 +85,7 @@ class SignUpScreen extends StatelessWidget {
 }
 
 
-
+*/
 
 
 

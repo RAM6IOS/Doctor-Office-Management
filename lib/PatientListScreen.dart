@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'PatientDetailScreen.dart';
-import 'AppointmentsScreen.dart';
+import 'appointments/AppointmentsScreen.dart';
 //import 'AppointmentsScreen';
 
 class PatientListScreen extends StatelessWidget {
