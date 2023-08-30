@@ -41,52 +41,79 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Personal Information')),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            TextFormField(
-              controller: nameController,
-              decoration: InputDecoration(labelText: 'Name'),
-            ),
-            SizedBox(height: 16),
-            TextFormField(
-              controller: emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-            ),
-            SizedBox(height: 16),
-            TextFormField(
-              controller: dobController,
-              decoration: InputDecoration(labelText: 'Date of Birth'),
-            ),
-            SizedBox(height: 16),
-            TextFormField(
-              controller: addressController,
-              decoration: InputDecoration(labelText: 'Address'),
-            ),
-            SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: () {
-                // Implement logic to update personal information
-                String newName = nameController.text;
+        return Scaffold(
+          appBar: AppBar(title: Text('Patient Home')),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Text(
+                  "Changes Info",
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                TextFormField(
+                  controller: nameController,
+                  decoration: InputDecoration(labelText: "Username"),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                TextFormField(
+                  controller: emailController,
+                  decoration: InputDecoration(labelText: "Email"),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                TextFormField(
+                  controller: dobController,
+                  obscureText: false,
+                  decoration: InputDecoration(labelText: "Date of Birth'"),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                TextFormField(
+                  controller:   addressController,
+                  decoration: InputDecoration(labelText: "Address"),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                
+                Material(
+                  
+                  color: Color.fromARGB(255, 8, 115, 215),
+                  borderRadius: BorderRadius.circular(10),
+                  child: InkWell(
+                    onTap: (){
+                       String newName = nameController.text;
                 String newEmail = emailController.text;
                 String newDob = dobController.text;
                 String newAddress = addressController.text;
 
-                // Update personal information logic goes here
-
-                ScaffoldMessenger.of(context).showSnackBar(
+                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Personal information updated')),
                 );
-              },
-              child: Text('Save Changes'),
+
+                    },
+                    child: Padding (
+                      padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.02 ,horizontal: MediaQuery.of(context).size.width * 0.25),
+                      child: Text(
+                        "Save Changes",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
+
   }
 }

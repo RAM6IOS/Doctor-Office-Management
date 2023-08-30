@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../patient_home_screen.dart';
+import '../patientHome/patient_home_screen.dart';
 
 class MedicalHistoryScreen extends StatelessWidget {
   final List<MedicalRecord> medicalHistory;
